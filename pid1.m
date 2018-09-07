@@ -1,0 +1,33 @@
+% dthetam=zeros(1,200);
+% kb=0.00876;
+% ka=12;
+% L=0.0006;
+% R=1.4;
+% Km=4.375;%torque constant
+% dia=zeros(1,200);
+% vref=zeros(1,200);
+% vref(1)=1;
+% ia=zeros(1,200);
+% for i=2:200
+% t(1,:)=0:0.01:2;
+% va(i)=vref(i)*ka;
+% vb(i)=kb*dthetam(i);
+% dia(i)=(ia(i)-ia(i-1))/0.01;
+% ia(i)=(va(i)-vb(i)-L*dia(i))/R;
+% taum=Km*ia(i);
+step=0.01;
+Kc=20;
+TI=2;
+Td=3;
+q0=Kc*(1+step/TI+Td/step);
+q1=-Kc*(1+2*Td/step);
+q2=Kc*Td/step;
+verf=0;
+thetal=[0:0.4:60,60*ones(1,49)];
+
+thetals=
+for i=1:200
+e(i)=thetal(i)-thetals(i);
+%dvref(i)=q0*e(i)+q1*e(i-1)+q2*e(i-2);
+%verf=verf+dverf(i);
+end
